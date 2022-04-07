@@ -1,6 +1,6 @@
 ## nepali calendar application  made with deepin toolkit and qt5
 
-
+![image](img/screen.png)
 
 
 # build dependencies
