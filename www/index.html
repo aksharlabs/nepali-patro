@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Nepali Calendar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+	<style>
+body,
+html {
+	overflow: visible;
+}
+
+.xen-card {
+	z-index: 7;
+	display: block;
+	width: auto;
+	/* background: #3a0505; */
+	box-sizing: border-box;
+	/* margin:10px; */
+}
+
+.xen-card .xen-card-header {
+	background: #ffffff;
+	/* padding: 5px; */
+	overflow: visible;
+	position: relative;
+}
+
+.xen-card .xen-cell {
+	cursor: pointer;
+	position: relative;
+	/* text-align:center; */
+	width: 10%;
+	padding: 4.5%;
+	/* background-color: chocolate; */
+}
+
+td.xen-cell {
+	/* background-color: white; */
+}
+
+.xen-cell .nepali-date {
+	font-size: 28px
+}
+
+.xen-cell .english-date {
+	position: absolute;
+	right: 10%;
+	bottom: 5%;
+	color: #10138bb3;
+}
+
+.xen-cell:hover {
+	background: #f87f67ba
+}
+
+.xen-cell.bg-info {
+	color: #fff
+}
+
+.xen-card table.xen-calendar-table {
+	width: 97%;
+	background: #ffffff;
+	border-color: #a94dde;
+}
+
+.xen-calendar-table th {
+	text-align: center;
+	font-weight: bold;
+	background: #037456;
+	color: #fff;
+	padding: 5px 0;
+	-webkit-text-stroke-color: #1c1c1b;
+	-webkit-text-stroke-width: 0.1px;
+	font-size: 15px;
+}
+
+.xen-prev-next-btn {
+	float: right
+}
+
+.xen-prev-next-btn button {
+	height: 20px;
+	font-size: 13px;
+	padding: 2px 10px;
+	border: 1px solid #ccc
+}
+
+.xen-form-wrapper {
+	position: relative;
+	text-align: center
+}
+
+.xen-form-inline {
+	display: inline-block
+}
+
+.xen-calendar-month,
+.xen-calendar-year {
+	background: 0 0;
+	color: #193ae2;
+	font-size: 25px;
+	outline: 0;
+	border: none;
+	cursor: pointer;
+	/* -webkit-appearance:none; */
+	-moz-appearance: none;
+	text-indent: 1px;
+	text-overflow: unset;
+	/* font-weight: 500; */
+}
+
+.xen-calendar-month {
+	text-align-last: right;
+	margin-right: 10px
+}
+
+.xen-calendar-month option,
+.xen-calendar-year option {
+	color: #3e454d;
+	font-size: 16px
+}
+
+.div#nepalicalendar option {
+	position: relative;
+}
+
+.xen-card button#next,
+.xen-card button#previous {
+	position: absolute;
+	background: 0 0;
+	outline: 0;
+	border: none;
+	color: #000;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.xen-card button#previous {
+	left: 10px
+}
+
+.xen-card button#next {
+	right: 10px
+}
+
+.xen-bg-today {
+	background: #8dfadd;
+	color: #0d00bc;
+}
+
+.xen-bg-info {
+	/* background:#f87f67ba; */
+	/* color:#fff; */
+}
+
+.xen-calendar-table {
+	/* padding-top:5px; */
+}
+
+.xen-btn-prev {
+	margin-right: 3px
+}
+</style>
+
+	
+</head>
+<body class="container">
+	<center style="
+    align-content: center;
+"><div class="row">
+		<div class="col-md-12" style="margin-top: 9px;margin-right: 8px;margin-left: 6px;/* border-radius: 30px; */">
+			<div id="nepalicalendar" class="xen-calendar" style="
+    /* border-radius: 89px; */
+"><div class="xen-card"><div class="xen-card-header"><div class="xen-form-wrapper"><button class="xen-btn-prev" id="previous" onclick="previous(this)">&lt;</button><form class="xen-form-inline"><select class="xen-calendar-month" name="month" id="month" onchange="jump(this)"><option value="0">बैशाख</option><option value="1">जेठ</option><option value="2">असार</option><option value="3">श्रावण</option><option value="4">भदौ</option><option value="5">आश्विन</option><option value="6">कार्तिक</option><option value="7">मंसिर</option><option value="8">पुष</option><option value="9">माघ</option><option value="10">फाल्गुन</option><option value="11">चैत्र</option></select><select class="xen-calendar-year" name="year" id="year" onchange="jump(this)"><option value="2000">२०००</option><option value="2001">२००१</option><option value="2002">२००२</option><option value="2003">२००३</option><option value="2004">२००४</option><option value="2005">२००५</option><option value="2006">२००६</option><option value="2007">२००७</option><option value="2008">२००८</option><option value="2009">२००९</option><option value="2010">२०१०</option><option value="2011">२०११</option><option value="2012">२०१२</option><option value="2013">२०१३</option><option value="2014">२०१४</option><option value="2015">२०१५</option><option value="2016">२०१६</option><option value="2017">२०१७</option><option value="2018">२०१८</option><option value="2019">२०१९</option><option value="2020">२०२०</option><option value="2021">२०२१</option><option value="2022">२०२२</option><option value="2023">२०२३</option><option value="2024">२०२४</option><option value="2025">२०२५</option><option value="2026">२०२६</option><option value="2027">२०२७</option><option value="2028">२०२८</option><option value="2029">२०२९</option><option value="2030">२०३०</option><option value="2031">२०३१</option><option value="2032">२०३२</option><option value="2033">२०३३</option><option value="2034">२०३४</option><option value="2035">२०३५</option><option value="2036">२०३६</option><option value="2037">२०३७</option><option value="2038">२०३८</option><option value="2039">२०३९</option><option value="2040">२०४०</option><option value="2041">२०४१</option><option value="2042">२०४२</option><option value="2043">२०४३</option><option value="2044">२०४४</option><option value="2045">२०४५</option><option value="2046">२०४६</option><option value="2047">२०४७</option><option value="2048">२०४८</option><option value="2049">२०४९</option><option value="2050">२०५०</option><option value="2051">२०५१</option><option value="2052">२०५२</option><option value="2053">२०५३</option><option value="2054">२०५४</option><option value="2055">२०५५</option><option value="2056">२०५६</option><option value="2057">२०५७</option><option value="2058">२०५८</option><option value="2059">२०५९</option><option value="2060">२०६०</option><option value="2061">२०६१</option><option value="2062">२०६२</option><option value="2063">२०६३</option><option value="2064">२०६४</option><option value="2065">२०६५</option><option value="2066">२०६६</option><option value="2067">२०६७</option><option value="2068">२०६८</option><option value="2069">२०६९</option><option value="2070">२०७०</option><option value="2071">२०७१</option><option value="2072">२०७२</option><option value="2073">२०७३</option><option value="2074">२०७४</option><option value="2075">२०७५</option><option value="2076">२०७६</option><option value="2077">२०७७</option><option value="2078">२०७८</option><option value="2079">२०७९</option><option value="2080">२०८०</option><option value="2081">२०८१</option><option value="2082">२०८२</option><option value="2083">२०८३</option><option value="2084">२०८४</option><option value="2085">२०८५</option><option value="2086">२०८६</option><option value="2087">२०८७</option><option value="2088">२०८८</option><option value="2089">२०८९</option><option value="2090">२०९०</option></select></form><button class="xen-btn" id="next" onclick="next(this)">&gt;</button></div></div><table border="1" class="xen-calendar-table" id="calendar"><thead><tr><th>आइतवार <br> Sunday</th><th>सोमवार <br> Monday</th><th>मङ्गलवार <br> Tuesday</th><th>बुधवार <br> Wednesday</th><th>बिहिवार <br> Thursday</th><th>शुक्रवार <br> Friday</th><th>शनिवार <br> Saturday</th></tr></thead><tbody class="calendar-body"><tr><td></td><td></td><td class="xen-cell"><span class="nepali-date">१</span><span class="english-date">15</span></td><td class="xen-cell"><span class="nepali-date">२</span><span class="english-date">16</span></td><td class="xen-cell"><span class="nepali-date">३</span><span class="english-date">17</span></td><td class="xen-cell"><span class="nepali-date">४</span><span class="english-date">18</span></td><td class="xen-cell"><span class="nepali-date">५</span><span class="english-date">19</span></td></tr><tr><td class="xen-cell"><span class="nepali-date">६</span><span class="english-date">20</span></td><td class="xen-cell"><span class="nepali-date">७</span><span class="english-date">21</span></td><td class="xen-cell"><span class="nepali-date">८</span><span class="english-date">22</span></td><td class="xen-cell"><span class="nepali-date">९</span><span class="english-date">23</span></td><td class="xen-cell"><span class="nepali-date">१०</span><span class="english-date">24</span></td><td class="xen-cell"><span class="nepali-date">११</span><span class="english-date">25</span></td><td class="xen-cell"><span class="nepali-date">१२</span><span class="english-date">26</span></td></tr><tr><td class="xen-cell"><span class="nepali-date">१३</span><span class="english-date">27</span></td><td class="xen-cell"><span class="nepali-date">१४</span><span class="english-date">28</span></td><td class="xen-cell"><span class="nepali-date">१५</span><span class="english-date">29</span></td><td class="xen-cell"><span class="nepali-date">१६</span><span class="english-date">30</span></td><td class="xen-cell"><span class="nepali-date">१७</span><span class="english-date">31</span></td><td class="xen-cell"><span class="nepali-date">१८</span><span class="english-date">1</span></td><td class="xen-cell"><span class="nepali-date">१९</span><span class="english-date">2</span></td></tr><tr><td class="xen-cell"><span class="nepali-date">२०</span><span class="english-date">3</span></td><td class="xen-cell"><span class="nepali-date">२१</span><span class="english-date">4</span></td><td class="xen-cell"><span class="nepali-date">२२</span><span class="english-date">5</span></td><td class="xen-bg-today xen-cell"><span class="nepali-date">२३</span><span class="english-date">6</span></td><td class="xen-cell"><span class="nepali-date">२४</span><span class="english-date">7</span></td><td class="xen-cell"><span class="nepali-date">२५</span><span class="english-date">8</span></td><td class="xen-cell"><span class="nepali-date">२६</span><span class="english-date">9</span></td></tr><tr><td class="xen-cell"><span class="nepali-date">२७</span><span class="english-date">10</span></td><td class="xen-cell"><span class="nepali-date">२८</span><span class="english-date">11</span></td><td class="xen-cell"><span class="nepali-date">२९</span><span class="english-date">12</span></td><td class="xen-cell"><span class="nepali-date">३०</span><span class="english-date">13</span></td></tr><tr></tr></tbody></table></div></div>
+		</div>
+	</div>
+                                                                 
+	<script src="./include/jquery.min.js"></script>
+	<script src="./include/nepalicalendar.min.js"></script>
+	<script>
+		$('#nepalicalendar').nepalicalendar();
+	</script>
+</center>
+
+
+</body></html>

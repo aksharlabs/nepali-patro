@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>www/index.html</file>
+        <file>images/logo.png</file>
+        <file>www/logo.png</file>
+        <file>www/include/jquery.min.js</file>
+        <file>www/include/nepalicalendar.min.js</file>
+        <file>images/cal-logo.png</file>
+        <file>images/logo-small.png</file>
+    </qresource>
+</RCC>
