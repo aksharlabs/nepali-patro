@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>www/index.html</file>
+        <file>www/logo.png</file>
+        <file>www/include/jquery.min.js</file>
+        <file>www/include/nepalicalendar.min.js</file>
+    </qresource>
+</RCC>

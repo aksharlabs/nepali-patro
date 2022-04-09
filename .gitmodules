@@ -1,0 +1,3 @@
+[submodule "non-dtk-based/www"]
+	path = non-dtk-based/www
+	url = www
