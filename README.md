@@ -11,5 +11,5 @@ install these libraries along with qt build packages to build and run
 
 # install above non dev packages as runtime libraries if you want to run application
 
-# for non deepin distros i have aded non-dtk-based folder. this can be built with qmake or qtcreator.
+# sorry i ihave not time to build for non deepin distros i have aded non-dtk-based folder. this can be built with qmake or qtcreator.
 
